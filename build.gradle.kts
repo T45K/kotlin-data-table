@@ -27,11 +27,7 @@ kotlin {
 
 publishing {
     publications {
-        create<MavenPublication>("maven") {
-            groupId = "io.github.t45k"
-            artifactId = "kotlin-data-table"
-            version = "0.0.1"
-
+        create<MavenPublication>("gpr") {
             from(components["java"])
         }
     }
