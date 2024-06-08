@@ -1,7 +1,6 @@
 # Kotlin Data Table
 
-Simple data table DSL for Kotlin.
-
+Simple data table DSL for Kotlin.<br>
 This is expired by [Spock Data Tables](https://spockframework.org/spock/docs/2.3/data_driven_testing.html#data-tables).
 
 ## Install 
@@ -34,8 +33,7 @@ dependencies {
 
 Please refer to [test cases](./src/test/kotlin/io/github/t45k/kotlin_data_table/TableTest.kt).
 
-`tableToRow` converts table DSL to tuple of columns.
-
+`tableToRow` converts table DSL to tuple of columns.<br>
 It is destructive.
 
 ```kotlin
@@ -52,8 +50,7 @@ listOf(
 )
 ```
 
-`tableToRowWithName` converts table DSL to tuple of columns by name.
-
+`tableToRowWithName` converts table DSL to tuple of columns by name.<br>
 It is like `Map` structure, i.e., you can get value by name.
 
 ```kotlin
