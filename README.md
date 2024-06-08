@@ -33,3 +33,40 @@ dependencies {
 ## How to use
 
 Please refer to [test cases](./src/test/kotlin/io/github/t45k/kotlin_data_table/TableTest.kt).
+
+`tableToRow` converts table DSL to tuple of columns.
+
+It is destructive.
+
+```kotlin
+tableToRow {
+  "Bob"   `|` 27 `|` Gender.MALE
+  "Alice" `|` 34 `|` Gender.FEMALE
+  "Alex"  `|`  1 `|` Gender.MALE
+}.map { (name: String, age: Int, gender: Gender) -> Person(name, age, gender) }
+
+listOf(
+  Person("Bob", 27, Gender.MALE),
+  Person("Alice", 34, Gender.FEMALE),
+  Person("Alex", 1, Gender.MALE),
+)
+```
+
+`tableToRowWithName` converts table DSL to tuple of columns by name.
+
+It is like `Map` structure, i.e., you can get value by name.
+
+```kotlin
+tableToRowWithName {
+  "name"  `|` "age" `|` "gender" // column names are necessary in the first row
+  "Bob"   `|`    27 `|` Gender.MALE
+  "Alice" `|`    34 `|` Gender.FEMALE
+  "Alex"  `|`     1 `|` Gender.MALE
+}.map { Person(it["name"], it["age"], it["gender"]) } // get value by column name
+
+listOf(
+  Person("Bob", 27, Gender.MALE),
+  Person("Alice", 34, Gender.FEMALE),
+  Person("Alex", 1, Gender.MALE),
+)
+```
