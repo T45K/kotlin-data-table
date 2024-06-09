@@ -1,4 +1,4 @@
-package io.github.t45k.kotlin_data_table
+package com.github.t45k.kotlin_data_table
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

@@ -1,4 +1,4 @@
-package io.github.t45k.kotlin_data_table
+package com.github.t45k.kotlin_data_table
 
 fun tableToRow(dsl: TableToRowDSL.() -> Unit): List<TableRow> {
     val dslBody = TableToRowDSL()
