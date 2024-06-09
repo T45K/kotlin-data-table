@@ -1,5 +1,7 @@
 plugins {
     kotlin("jvm") version "2.0.0"
+
+    `maven-publish`
 }
 
 group = "com.github.t45k"
@@ -19,4 +21,14 @@ tasks.test {
 
 kotlin {
     jvmToolchain(21)
+}
+
+publishing {
+    publishing {
+        publications {
+            create<MavenPublication>("maven") {
+                from(components["java"])
+            }
+        }
+    }
 }
