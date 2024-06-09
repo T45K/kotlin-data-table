@@ -3,13 +3,22 @@
 Simple data table DSL for Kotlin.<br>
 This is expired by [Spock Data Tables](https://spockframework.org/spock/docs/2.3/data_driven_testing.html#data-tables).
 
-## Install 
+## Install
+
+Please refer to [JitPack page](https://jitpack.io/#T45K/kotlin-data-table/0.0.1).
 
 ### Maven
 
 ```pom.xml
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+
 <dependency>
-  <groupId>io.github.t45k</groupId>
+  <groupId>com.github.t45k</groupId>
   <artifactId>kotlin-data-table</artifactId>
   <version>0.0.1</version>
 </dependency>
@@ -18,14 +27,14 @@ This is expired by [Spock Data Tables](https://spockframework.org/spock/docs/2.3
 ### Gradle
 
 ```build.gradle.kts
+import java.net.URI
+
 repositories {
-    maven {
-        url = URI("https://maven.pkg.github.com/T45K/kotlin-data-table")
-    }
+    maven { url = URI("https://jitpack.io") }
 }
 
 dependencies {
-    implementation("io.github.t45k:kotlin-data-table:0.0.1")
+    implementation("com.github.T45K:kotlin-data-table:0.0.1")
 }
 ```
 
