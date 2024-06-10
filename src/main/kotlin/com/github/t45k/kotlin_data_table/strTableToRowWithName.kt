@@ -10,7 +10,7 @@ fun strTableToRowWithName(table: String, delimiter: String = "|"): List<StrTable
 }
 
 class StrTableRowWithName(private val values: Map<String, String>) {
-    operator fun get(key: String): String? = values[key]
+    operator fun get(key: String): String = values[key]!!
 
     override fun toString(): String = values.toString()
     override fun hashCode(): Int = values.hashCode()
