@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.T45K:kotlin-data-table:0.0.1")
+    implementation("com.github.T45K:kotlin-data-table:0.1.0")
 }
 ```
 
@@ -75,4 +75,26 @@ listOf(
   Person("Alice", 34, Gender.FEMALE),
   Person("Alex", 1, Gender.MALE),
 )
+```
+
+You cal use multi-line string instead.<br>
+Please note that it is your own responsibility to map string type to appropriate type.
+
+```kotlin
+strTableToRow(
+    """
+        Bob   |  27 | MALE
+        Alice |  34 | FEMALE
+        Alex  |   1 | MALE
+    """.trimIndent()
+).map { (name, age, gender) -> Person(name, age.toInt(), Gender.valueOf(gender)) }
+
+strTableToRowWithName(
+    """
+        name  | age | gender
+        Bob   |  27 | MALE
+        Alice |  34 | FEMALE
+        Alex  |   1 | MALE
+    """.trimIndent()
+).map { Person(it["name"], it["age"].toInt(), Gender.valueOf(it["gender"])) }
 ```
