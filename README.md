@@ -1,7 +1,7 @@
 # Kotlin Data Table
 
 Simple data table DSL for Kotlin.<br>
-This is expired by [Spock Data Tables](https://spockframework.org/spock/docs/2.3/data_driven_testing.html#data-tables).
+This is inspired by [Spock Data Tables](https://spockframework.org/spock/docs/2.3/data_driven_testing.html#data-tables).
 
 ## Install
 
