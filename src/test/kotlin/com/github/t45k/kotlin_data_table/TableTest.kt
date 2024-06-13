@@ -52,7 +52,7 @@ class TableTest {
 
     @Test
     fun strTableToRowWithName() {
-        strTableToRowWithName(
+        val actual = strTableToRowWithName(
             """
                 name  | age | gender
                 Bob   |  27 | MALE
@@ -60,6 +60,8 @@ class TableTest {
                 Alex  |   1 | MALE
             """.trimIndent()
         ).map { Person(it["name"], it["age"].toInt(), Gender.valueOf(it["gender"])) }
+
+        assertEquals(expected, actual)
     }
 
     private data class Person(val name: String, val age: Int, val gender: Gender)
