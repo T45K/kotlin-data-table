@@ -5,7 +5,7 @@ This is inspired by [Spock Data Tables](https://spockframework.org/spock/docs/2.
 
 ## Install
 
-Please refer to [JitPack page](https://jitpack.io/#T45K/kotlin-data-table/0.0.1).
+Please refer to [JitPack page](https://jitpack.io/#T45K/kotlin-data-table/0.1.1).
 
 ### Maven
 
