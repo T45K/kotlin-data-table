@@ -2,6 +2,7 @@ package com.github.t45k.kotlin_data_table
 
 fun strTableToRow(table: String, delimiter: String = "|"): List<StrTableRow> {
     return table.split(System.lineSeparator())
+        .filter { it.isNotBlank() }
         .map { line -> line.split(delimiter).map { it.trim() } }
         .map { StrTableRow(it) }
 }

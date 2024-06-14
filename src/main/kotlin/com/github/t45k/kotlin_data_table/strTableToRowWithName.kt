@@ -1,7 +1,7 @@
 package com.github.t45k.kotlin_data_table
 
 fun strTableToRowWithName(table: String, delimiter: String = "|"): List<StrTableRowWithName> {
-    val lines = table.split(System.lineSeparator())
+    val lines = table.split(System.lineSeparator()).filter { it.isNotBlank() }
     val headerColumns = lines[0].split(delimiter).map { it.trim() }
     return lines.subList(1, lines.size)
         .map { line -> line.split(delimiter).map { it.trim() } }
