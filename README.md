@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/T45K/kotlin-data-table.svg)](https://jitpack.io/#T45K/kotlin-data-table)
+
 # Kotlin Data Table
 
 Simple data table DSL for Kotlin.<br>
