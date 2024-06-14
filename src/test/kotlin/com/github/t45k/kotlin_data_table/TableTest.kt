@@ -51,6 +51,21 @@ class TableTest {
     }
 
     @Test
+    fun `strTableToRow ignores empty line`() {
+        val actual = strTableToRow(
+            """
+                Bob   |  27 | MALE
+                
+                Alice |  34 | FEMALE
+                
+                Alex  |   1 | MALE
+            """
+        ).map { (name, age, gender) -> Person(name, age.toInt(), Gender.valueOf(gender)) }
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
     fun strTableToRowWithName() {
         val actual = strTableToRowWithName(
             """
@@ -60,6 +75,25 @@ class TableTest {
                 Alex  |   1 | MALE
             """.trimIndent()
         ).map { Person(it["name"], it["age"].toInt(), Gender.valueOf(it["gender"])) }
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `strTableToRowWithName ignores empty line`() {
+        val actual = strTableToRowWithName(
+            """
+                name  | age | gender
+                
+                Bob   |  27 | MALE
+                
+                Alice |  34 | FEMALE
+                
+                Alex  |   1 | MALE
+            """
+        ).map {
+            Person(it["name"], it["age"].toInt(), Gender.valueOf(it["gender"]))
+        }
 
         assertEquals(expected, actual)
     }
