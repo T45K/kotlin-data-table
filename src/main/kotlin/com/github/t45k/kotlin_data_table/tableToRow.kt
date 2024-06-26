@@ -20,8 +20,9 @@ class TableToRowDSL {
 }
 
 class TableRow(internal val values: MutableList<Any>) {
-    infix fun `|`(other: Any) {
+    infix fun `|`(other: Any): TableRow {
         values += other
+        return this
     }
 
     operator fun <T> component1(): T = values[0] as T
